@@ -19,9 +19,10 @@ function pre(event){
 }
           $("#Add").click(function (){
                var location=$("#location").val();
-    var capacity=$("#capacity").val();
-    var volume=$("#volume").val();
-    var speed=$("#speed").val();
+    		   var capacity=$("#capacity").val();
+    		   var volume=$("#volume").val();
+    		   var speed=$("#speed").val();
+	 		   var ability=$("#ability").val();
         $.post("https://someleltest.herokuapp.com/api/ships",
         {
             "SID":JSON.parse(localStorage.getItem("SID")),
@@ -29,9 +30,10 @@ function pre(event){
                     "location":location,
                     "capacity":capacity,
                     "volume":volume,
-                    "ability":"everywhere",
+                    "ability":"innerGalactic",
                     "speed":speed,
-                    "consumption":5
+                    "consumption":5,
+					"ability":ability
                 }
             },
         function(data,status){
@@ -39,6 +41,22 @@ function pre(event){
            // location.reload();
         });
     })
+$("#Delete").click(function (){
+	//var url=https://someleltest.herokuapp.com/api/ships
+	$.ajax({
+		url:"https://someleltest.herokuapp.com/api/ships",
+		type:"DELETE",
+		data:{
+		"SID":JSON.parse(localStorage.getItem("SID")),
+		"ship":{
+		"id":$("#id").val()	
+		}
+		},
+		success:function(){
+			console.log("Ok");
+		}
+	})
+})
 
 function showShips(data){
 	 var table='<table class="table table-hover table-bordered">';
