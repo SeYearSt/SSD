@@ -72,10 +72,13 @@ $.get("https://someleltest.herokuapp.com/api/planets/getAll",
 							   })
 		 function showOrders(data){
 		var table='<table class="table table-bordered table-hover">';
-		table+='<tr><th>form</th><th>location</th><th>price</th><th>reciever</th><th>reg_date</th><th>sender</th><th>status</th>';
+		table+='<tr><th>ContainerID</th><th>form</th><th>location</th><th>price</th><th>reciever</th><th>reg_date</th><th>sender</th><th>status</th>';
   table+='<th>to</th><th>thackID</th><th>type</th><th>volume</th><th>weight</th></tr>'
 		for(i=0;i<data.length;++i){
 		table+="<tr>"
+			table+="<td>";
+			if(data[i].containerID) table+=data[i].containerID;else table+="false";
+			"</td>";
 			table+="<td>"+data[i].from+"</td>";
 			table+="<td>"+data[i].location+"</td>";
 			table+="<td>"+data[i].price+"</td>";
@@ -142,24 +145,27 @@ $.get("https://someleltest.herokuapp.com/api/planets/getAll",
 
 			
 			$("#btnConfirmContainer").click(function(){
-				var data={
+				var cc={
 			"SID":JSON.parse(localStorage.getItem("SID")),
-			"shipID":$("#orderID").val(),
-			"containerID":$("#location").val()
+			"shipID":parseInt($("#orderID").val()),
+			"containerID":parseInt($("#location").val())
 		}
-		
+	//	console.log(cc);
 		$.ajax({
     type:'POST', 
     url: 'https://someleltest.herokuapp.com/api/orders/confirmContainer', 
-    data: JSON.stringify(data), 
+    data: cc, 
     contentType: 'application/json',
-			success:function(status){console.log(status);}
+			success:function(status){console.log(status);},
+			error:function (status){console.log(status);}
 			})
-		/*$.post("https://someleltest.herokuapp.com/api/orders/createContainer",
-			  cont,
+	})
+
+	/*	$.post("https://someleltest.herokuapp.com/api/orders/createContainer",
+			  cc,
 		function(status){console.log(status);}
-			   )*/
-		})
+			   )
+		})*/
 		// console.log(JSON.parse(localStorage.getItem("SID")));
 		// console.log(JSON.parse(localStorage.getItem("permission")));
 		// console.log(from);
