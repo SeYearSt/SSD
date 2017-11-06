@@ -122,9 +122,13 @@ $.get("https://someleltest.herokuapp.com/api/planets/getAll",
 		}) 
 		  })
 		$("#btnCreateContainer").click(function(){
-			alert("O`k");
-			var num=[],location;
-			num.push(parseInt($("#orderID").val()));
+			var temp=[],location;
+			temp=$("#orderID").val();
+		    var num="[";
+			num+=temp;
+			num+="]";
+			console.log(temp);
+			var num=JSON.parse(num);
 			location=$("#location").val();
 			var cont= {
 			"SID":JSON.parse(localStorage.getItem("SID")),
@@ -137,7 +141,7 @@ $.get("https://someleltest.herokuapp.com/api/planets/getAll",
 				data:cont,
 				error:function(status,responseText){console.log(status.responseText);}
 			})
-			console.log(cont);
+			console.log(num);
 		})
 
 			
@@ -153,7 +157,8 @@ $.get("https://someleltest.herokuapp.com/api/planets/getAll",
     url: 'https://someleltest.herokuapp.com/api/orders/confirmContainer', 
     data: JSON.stringify(data), 
     contentType: 'application/json',
-			success:function(status){console.log(status);}
+			success:function(status){console.log(status);},
+			error:function (status){alert(status.responseText);}
 			})
 		/*$.post("https://someleltest.herokuapp.com/api/orders/createContainer",
 			  cont,
