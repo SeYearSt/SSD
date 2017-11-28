@@ -2,7 +2,7 @@
 *  This file contains functions, which are used for all pages with cytoscape map/graph
 */
 // System ID for each user (taken from local storage after authentification)
-let SID = "ee2625ccf966306ce46c4cd2b60a77053f58fcdce91d2fae51fe42d23a6d0d70";
+let SID = "8cef8dac92cdb57588c04db03f16e978bd8b9a355f5a649fa4811e5d6176a8ee";
 
 // Global variable for saving planets and paths
 let planets, paths;
