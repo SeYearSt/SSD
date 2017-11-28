@@ -59,6 +59,7 @@ keys.sort();
 	for (i=0;i<keys.length;++i){
 		table+="<th>"+keys[i]+"</th>";
 	}
+	table+="<th style='color:red;'>Remove</th><th style='color:green;'>Permission</th><th style='color:rgb(244, 191, 66)'>Reset</th>"
 	
 	for (i=0;i<responseArr.length;++i){
 		var temp=responseArr[i];
@@ -69,20 +70,20 @@ keys.sort();
 			table+="</td>";
 			}
 
-		table+="<td><i class='fa fa-times-circle fa-2x' style='color:red;' data-title='Remove user .You will  be never able to cancel this action!'  onclick='";
+		table+="<td><p class='text-center'><i class='fa fa-times-circle fa-2x' style='color:red;' data-title='Remove user .You will  be never able to cancel this action!'  onclick='";
 		table+="removeUser(\"";
 		table+=temp.email;
-		table+="\")'</i></td>";
+		table+="\")'</i></p></td>";
 		
-		table+="<td><i class='fa fa-user-plus fa-2x' data-title='Give this user more privilege.' style='color:green;' onclick='";
+		table+="<td><p class='text-center'><i class='fa fa-user-plus fa-2x' data-title='Give this user more privilege.' style='color:green;' onclick='";
 		table+="addPermision(\"";
 		table+=temp.email;
-		table+="\")'</i></td>";
+		table+="\")'</i></p></td>";
 		
-		table+="<td><i class='fa fa-times fa-2x' data-title='Deprive of privileges' style='color:rgb(244, 191, 66);' onclick='";
+		table+="<td><p class='text-center'><i class='fa fa-times fa-2x' data-title='Deprive of privileges' style='color:rgb(244, 191, 66);' onclick='";
 		table+="removePermission(\"";
 		table+=temp.email;
-		table+="\")'</i></td>";
+		table+="\")'</i></p></td>";
 		
 	}
 	table+="</table>";
