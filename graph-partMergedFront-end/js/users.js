@@ -27,7 +27,7 @@ function loadPlanetsToSelect() {
 }
 
 $(document).ready(function() {
-		urlGet+=JSON.parse(localStorage.getItem("SID"));
+	urlGet+=JSON.parse(localStorage.getItem("SID"));
 	loadTable();
 	loadPlanetsToSelect();
 });
@@ -91,9 +91,20 @@ keys.sort();
 var emailGlobal;
 
  function removeUser (email){
-	 	console.log("remove user "+email);
-if(confirm("Do you really want remove this user?")){
-	 $.ajax({
+	 $.confirm({
+	animation:'rotate',
+	closeAnimation:'scale',	 
+    title: 'Removing user',
+    content: 'Do you realy want to remove '+ email,
+    type: 'red',
+    typeAnimated: true,
+	autoClose: 'cancel|4000',
+    buttons: {
+        remove: {
+            text: 'Remove!',
+            btnClass: 'btn-red',
+            action: function(){
+				$.ajax({
 		 type:'DELETE',
 		 url:url,
 		 data:{
@@ -107,7 +118,12 @@ if(confirm("Do you really want remove this user?")){
 			alert(status.responseText);
 		}
 	 })
-}
+            }
+        },
+        cancel: function () {
+        }
+    }
+});
 }
 
 function addPermision(email){
