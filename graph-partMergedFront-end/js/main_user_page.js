@@ -1,6 +1,6 @@
 /* Main functions for work in main user page */
 // System ID for each user (taken from local storage after authentification)
-let SID = "3f46fd78c4c97533a687e06fafe91872d8fe40dc755220d82f4e55d2be118ca4";
+let SID = JSON.parse(localStorage.getItem("SID"));
 
 // Global variable for saving planets and paths
 let planets, paths;

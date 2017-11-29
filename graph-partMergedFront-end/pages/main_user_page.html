@@ -24,6 +24,7 @@
     <script src="../js/tooltipster.bundle.min.js"></script>
 	<script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-qtip/2.7.0/cytoscape-qtip.js"></script>
 	<!-- own -->
+	<script src="../js/loadPages.js"></script>
 	<script src="../js/main_user_page.js"></script>
  	<script src="../js/showByPermission.js"></script>
   	<script src="../js/nav.js"></script>
@@ -87,9 +88,9 @@
 				</div>
 			</div>
 		</div>
-		 <div class="row">
-			<div class="col-5 hint" data-title="Select planet from where you want send container">
-					<p id="from" name="from">Click to select end planet</p>
+		 <div class="row" style="padding-top: 10%">
+			<div class="col-5" data-title="Select planet from where you want send container">
+						<p id="from" name="from">Click to select start planet</p>
 				</div>
 				<div class="col-1">
 					<button type="button" id="clear-from" class="btn alert-danger">x</button>
@@ -103,7 +104,7 @@
 				</div>
 			
 			</div>
-       <div class="row">
+       <div class="row" style="padding-top: 10%">
 		   <div class="col-6 hint" data-title="Input weight of your parcel form 0 to 3000">
 			<div class="form-group">
 				<label for="weight">Weight</label>
@@ -117,8 +118,9 @@
        	</div>
        </div>
        </div>
-       <div class="row">
-       	<div class="col-6 hint" data-title="Choose between cheap, regular, quick.Cheap- is cheap delivery method, your order will stay in queue. Regular - the cheapest method delivery , your order will be send as soon as regular ship wiil be avalible. Quick - the most expensive method dilvery , your order will be send during day">
+       <div class="row" style="padding-top: 10%">
+       	<div class="col-6 hint" data-title="Choose between cheap, regular, quick.">
+       	<!--Cheap- is cheap delivery method, your order will stay in queue. Regular - the cheapest method delivery , your order will be send as soon as regular ship wiil be avalible. Quick - the most expensive method dilvery , your order will be send during day-->
        	<div class="form-group">
        	<select id="type" class='form-control'>
        		<option value="0">cheap</option>
@@ -142,7 +144,7 @@
 		
 		
 		
-		<form id='makeOrderForm'>
+		<!--<form id='makeOrderForm'>
 			<div class="row" style=" margin: 0; padding: 0 ">
 				<div class="col-6">
 					<div class="form-group">
@@ -196,7 +198,7 @@
 					<button type="button" id="make-order" class="btn btn-info">Make Order</button>
 				</div>
 			</div>
-		</form>
+		</form>-->
 	</div>
 	<!-- End of dialog window for registering order -->
 	

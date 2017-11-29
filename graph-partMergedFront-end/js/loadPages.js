@@ -9,10 +9,10 @@ $( document ).ready( function (){
 	permission=permission? permission:"unauthorized";
 
 var pages={
-	admin:["index.html","log-in.html","order.html","planets.html","register_order.html","ships.html","sing-up.html","tfa.html","users.html"],
-	operator:["index.html","log-in.html","order.html","planets.html","register_order.html","ships.html","sing-up.html","tfa.html"],
-	default:["index.html","log-in.html","order.html","planets.html","register_order.html","sing-up.html","tfa.html"],
-	unauthorized:["index.html","log-in.html","order.html","planets.html","register_order.html","sing-up.html"]
+	admin:["index.html","log-in.html","order.html","planets.html","ships.html","sing-up.html","tfa.html","users.html","main_user_page.html"],
+	operator:["index.html","log-in.html","order.html","planets.html","ships.html","sing-up.html","tfa.html","main_user_page.html"],
+	default:["index.html","log-in.html","sing-up.html","tfa.html","main_user_page.html"],
+	unauthorized:["index.html","log-in.html","sing-up.html","main_user_page.html"]
 }
 function loadPageByPerm(perm){
 	console.log(perm);
